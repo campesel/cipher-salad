@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-border-color: lightgrey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.HillController">
+   <children>
+      <Label alignment="CENTER" text="Key Matrix" />
+      <GridPane alignment="CENTER" hgap="20.0" vgap="20.0">
+        <columnConstraints>
+          <ColumnConstraints fillWidth="false" hgrow="NEVER" minWidth="10.0" prefWidth="50.0" />
+          <ColumnConstraints fillWidth="false" hgrow="NEVER" minWidth="10.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+          <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="aTextField" alignment="CENTER" promptText="a" />
+            <TextField fx:id="bTextField" alignment="CENTER" promptText="b" GridPane.columnIndex="1" />
+            <TextField fx:id="cTextField" alignment="CENTER" promptText="c" GridPane.rowIndex="1" />
+            <TextField fx:id="dTextField" alignment="CENTER" promptText="d" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

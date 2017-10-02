@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<GridPane hgap="10.0" prefHeight="600.0" prefWidth="800.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.BreakerController">
+   <children>
+      <TitledPane collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ciphertext">
+         <content>
+            <TextArea fx:id="ciphertextArea" prefHeight="200.0" prefWidth="200.0" promptText="Type a message to be recovered here." wrapText="true" />
+         </content>
+      </TitledPane>
+      <TabPane GridPane.columnIndex="1" GridPane.rowSpan="2">
+         <tabs>
+            <Tab closable="false" text="Main">
+               <content>
+                  <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-border-color: lightgrey;">
+                     <children>
+                        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Logger" VBox.vgrow="ALWAYS">
+                           <content>
+                              <TextArea fx:id="logTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Ready." wrapText="true" VBox.vgrow="ALWAYS" />
+                           </content>
+                        </TitledPane>
+                        <Button mnemonicParsing="false" onAction="#run" text="Run" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Settings">
+               <content>
+                  <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-border-color: lightgrey;">
+                     <children>
+                        <TitledPane text="Caesar">
+                           <content>
+                              <VBox>
+                                 <children>
+                                    <CheckBox fx:id="caesarEnabled" mnemonicParsing="false" selected="true" text="Enabled" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Simple substitution">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <CheckBox fx:id="simpleSubEnabled" mnemonicParsing="false" selected="true" text="Enabled" />
+                                    <CheckBox fx:id="randomRestarts" mnemonicParsing="false" text="Random restarts" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Vigenère">
+                           <content>
+                              <VBox>
+                                 <children>
+                                    <CheckBox fx:id="vigenereEnabled" mnemonicParsing="false" selected="true" text="Enabled" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Hill">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <CheckBox fx:id="hillEnabled" mnemonicParsing="false" selected="true" text="Enabled" />
+                                    <CheckBox fx:id="knownPlaintextAttack" mnemonicParsing="false" text="Known-plaintext attack" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TitledPane collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Cleartext" GridPane.rowIndex="1">
+         <content>
+            <TextArea fx:id="cleartextArea" prefHeight="200.0" prefWidth="200.0" promptText="The recovered message will show up here." wrapText="true" />
+         </content>
+      </TitledPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="65.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+</GridPane>
